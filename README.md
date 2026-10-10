@@ -27,7 +27,7 @@ The pipeline includes:
 - Installing project dependencies and building the project
 - Running tests
 - Packaging the application
-
+Webhook test: Jenkins automatic build verification.
 ## GitHub Webhook Integration
 A GitHub webhook is configured to notify Jenkins whenever code is pushed to the repository. This allows Jenkins to trigger the configured pipeline automatically.
 
