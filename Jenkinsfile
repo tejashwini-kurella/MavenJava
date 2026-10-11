@@ -39,4 +39,22 @@ pipeline {
             }
         }
     }
+    
+    post {
+        success {
+            emailext(
+                to: 'ktejashwini17@gmail.com',
+                subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "Build succeeded. Details: ${env.BUILD_URL}"
+            )
+        }
+        failure {
+            emailext(
+                to: 'ktejashwini17@gmail.com',
+                subject: "FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "Build failed. Check: ${env.BUILD_URL}console"
+            )
+        }
+    }
+
 }
